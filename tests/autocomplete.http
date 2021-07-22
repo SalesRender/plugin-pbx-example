@@ -1,0 +1,16 @@
+GET {{host}}/protected/autocomplete/example
+X-PLUGIN-TOKEN: {{token}}
+
+###
+
+GET {{host}}/autocomplete/example?query=66
+
+###
+
+GET {{host}}/autocomplete/example?query[]=9&query[]=10
+
+###
+
+GET {{host}}/autocomplete/example?query[]=9&query[]=10&query[]=qwerty
+
+###

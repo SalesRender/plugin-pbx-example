@@ -1,0 +1,28 @@
+{
+  "name": "leadvertex/plugin-pbx-example",
+  "description": "Example PBX plugin for developing UI at leadvertex.com",
+  "type": "project",
+  "minimum-stability": "stable",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "Timur Kasumov aka XAKEPEHOK",
+      "email": "support@leadvertex.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Leadvertex\\Plugin\\Instance\\Pbx\\": "src/"
+    }
+  },
+  "repositories": [
+    { "type": "vcs", "url": "https://github.com/leadvertex/plugin-core-pbx" }
+  ],
+  "require": {
+    "php": ">=7.4.0",
+    "ext-curl": "*",
+    "ext-json": "*",
+    "xakepehok/array-graphql": "^0.0.1",
+    "leadvertex/plugin-core-pbx": "^0.1.0"
+  }
+}
