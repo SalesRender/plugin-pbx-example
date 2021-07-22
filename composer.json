@@ -16,7 +16,7 @@
     }
   },
   "repositories": [
-    { "type": "vcs", "url": "https://github.com/leadvertex/plugin-core-pbx" }
+    { "type": "composer", "url": "https://packagist.lvrtx.com/" }
   ],
   "require": {
     "php": ">=7.4.0",
