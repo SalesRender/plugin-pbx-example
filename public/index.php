@@ -1,5 +1,5 @@
 <?php
-use Leadvertex\Plugin\Core\Pbx\Factories\WebAppFactory;
+use Leadvertex\Plugin\Core\PBX\Factories\WebAppFactory;
 
 require_once __DIR__ . '/../vendor/autoload.php';
 
