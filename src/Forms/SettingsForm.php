@@ -9,6 +9,7 @@ namespace Leadvertex\Plugin\Instance\Pbx\Forms;
 
 
 use Leadvertex\Plugin\Components\Form\FieldDefinitions\BooleanDefinition;
+use Leadvertex\Plugin\Components\Form\FieldDefinitions\FieldDefinition;
 use Leadvertex\Plugin\Components\Form\FieldDefinitions\IntegerDefinition;
 use Leadvertex\Plugin\Components\Form\FieldDefinitions\ListOfEnum\Limit;
 use Leadvertex\Plugin\Components\Form\FieldDefinitions\ListOfEnum\Values\StaticValues;
@@ -17,6 +18,7 @@ use Leadvertex\Plugin\Components\Form\FieldDefinitions\PasswordDefinition;
 use Leadvertex\Plugin\Components\Form\FieldDefinitions\StringDefinition;
 use Leadvertex\Plugin\Components\Form\FieldGroup;
 use Leadvertex\Plugin\Components\Form\Form;
+use Leadvertex\Plugin\Components\Form\FormData;
 use Leadvertex\Plugin\Components\Translations\Translator;
 
 class SettingsForm extends Form
@@ -24,6 +26,13 @@ class SettingsForm extends Form
 
     public function __construct()
     {
+        $nonNull = function ($value, FieldDefinition $definition, FormData $data) {
+            $errors = [];
+            if (is_null($value)) {
+                $errors[] = Translator::get('settings', 'Поле не может быть пустым');
+            }
+            return $errors;
+        };
         parent::__construct(
             Translator::get('settings', 'Настройки телефонии'),
             Translator::get('settings', 'Все внесенные изменения вступят в силу в течение 30 сек'),
@@ -35,17 +44,17 @@ class SettingsForm extends Form
                         'login' => new StringDefinition(
                             Translator::get('settings', 'Логин'),
                             null,
-                            fn() => []
+                            $nonNull
                         ),
                         'password' => new PasswordDefinition(
                             Translator::get('settings', 'Пароль'),
                             null,
-                            fn() => []
+                            $nonNull
                         ),
                         'from' => new StringDefinition(
                             Translator::get('settings', 'Исходящий номер'),
                             null,
-                            fn() => []
+                            $nonNull
                         ),
                     ]
                 ),
@@ -56,7 +65,7 @@ class SettingsForm extends Form
                         'protocol' => new ListOfEnumDefinition(
                             Translator::get('settings', 'Протокол'),
                             null,
-                            fn() => [],
+                            $nonNull,
                             new StaticValues([
                                 'tcp' => [
                                     'title' => 'TCP',
@@ -73,40 +82,40 @@ class SettingsForm extends Form
                         'domain' => new StringDefinition(
                             Translator::get('settings', 'Домен'),
                             null,
-                            fn() => []
+                            $nonNull
                         ),
                         'realm' => new StringDefinition(
                             'Realm',
                             null,
-                            fn() => []
+                            $nonNull
                         ),
                         'proxy' => new StringDefinition(
                             Translator::get('settings', 'Прокси'),
                             null,
-                            fn() => []
+                            $nonNull
                         ),
                         'expires' => new IntegerDefinition(
                             Translator::get('settings', 'Время жизни'),
                             null,
-                            fn() => [],
+                            $nonNull,
                             600
                         ),
                         'register' => new BooleanDefinition(
                             Translator::get('settings', 'Требует регистрации'),
                             null,
-                            fn() => [],
+                            $nonNull,
                             false
                         ),
                         'number_format_with_plus' => new BooleanDefinition(
                             Translator::get('settings', 'Передавать номер с плюсом'),
                             null,
-                            fn() => [],
+                            $nonNull,
                             true
                         ),
                         'send_additional_data_via_x_headers' => new BooleanDefinition(
                             Translator::get('settings', 'Передавать дополнительную информацию в заголовках'),
                             null,
-                            fn() => [],
+                            $nonNull,
                             true
                         ),
                     ]
