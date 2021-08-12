@@ -77,7 +77,7 @@ class SettingsForm extends Form
                                 ],
                             ]),
                             new Limit(1, 1),
-                            'udp'
+                            ['udp']
                         ),
                         'domain' => new StringDefinition(
                             Translator::get('settings', 'Домен'),
