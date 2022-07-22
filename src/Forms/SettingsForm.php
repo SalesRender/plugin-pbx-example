@@ -54,7 +54,9 @@ class SettingsForm extends Form
                         'from' => new StringDefinition(
                             Translator::get('settings', 'Исходящий номер'),
                             null,
-                            $nonNull
+                            function () {
+                                return [];
+                            }
                         ),
                     ]
                 ),
