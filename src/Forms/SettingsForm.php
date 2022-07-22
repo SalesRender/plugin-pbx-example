@@ -56,7 +56,8 @@ class SettingsForm extends Form
                             null,
                             function () {
                                 return [];
-                            }
+                            },
+                            ''
                         ),
                     ]
                 ),
