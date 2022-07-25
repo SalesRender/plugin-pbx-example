@@ -5,6 +5,7 @@
  * @author Timur Kasumov (XAKEPEHOK)
  */
 
+use Dotenv\Dotenv;
 use Leadvertex\Plugin\Components\Db\Components\Connector;
 use Leadvertex\Plugin\Components\Form\Autocomplete\AutocompleteRegistry;
 use Leadvertex\Plugin\Components\Info\Developer;
@@ -24,6 +25,8 @@ use Money\Money;
 use XAKEPEHOK\Path\Path;
 
 # 0. Configure environment variable in .env file, that placed into root of app
+$dotenv = Dotenv::createImmutable(__DIR__);
+$dotenv->load();
 
 # 1. Configure DB (for SQLite *.db file and parent directory should be writable)
 Connector::config(new Medoo([
