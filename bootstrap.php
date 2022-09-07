@@ -79,7 +79,7 @@ Settings::addOnSaveHandler(function (Settings $settings) {
 # 7. Define CDR reward pricing function
 CdrPricing::config(function (Money $money) {
     $percent = $_ENV['LV_PLUGIN_PBX_PRICING_REWARD'];
-    return $money->divide(100)->multiply($percent);
+    return $money->multiply($percent)->divide(100);
 });
 
 # 8. Configure CDR parsers
