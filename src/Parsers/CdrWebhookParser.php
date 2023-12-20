@@ -5,17 +5,17 @@
  * @author Timur Kasumov (XAKEPEHOK)
  */
 
-namespace Leadvertex\Plugin\Instance\Pbx\Parsers;
+namespace SalesRender\Plugin\Instance\Pbx\Parsers;
 
 
 use Exception;
-use Leadvertex\Plugin\Components\Access\Registration\Registration;
-use Leadvertex\Plugin\Components\Access\Token\GraphqlInputToken;
-use Leadvertex\Plugin\Components\Db\Components\Connector;
-use Leadvertex\Plugin\Core\PBX\Components\CDR\CDR;
-use Leadvertex\Plugin\Core\PBX\Components\CDR\CdrPricing;
-use Leadvertex\Plugin\Core\PBX\Components\CDR\CdrSender;
-use Leadvertex\Plugin\Core\PBX\Components\CDR\CdrWebhookParserInterface;
+use SalesRender\Plugin\Components\Access\Registration\Registration;
+use SalesRender\Plugin\Components\Access\Token\GraphqlInputToken;
+use SalesRender\Plugin\Components\Db\Components\Connector;
+use SalesRender\Plugin\Core\PBX\Components\CDR\CDR;
+use SalesRender\Plugin\Core\PBX\Components\CDR\CdrPricing;
+use SalesRender\Plugin\Core\PBX\Components\CDR\CdrSender;
+use SalesRender\Plugin\Core\PBX\Components\CDR\CdrWebhookParserInterface;
 use Money\Currency;
 use Money\Money;
 use Slim\Exception\HttpException;

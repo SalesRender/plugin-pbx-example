@@ -5,12 +5,12 @@
  * @author Timur Kasumov (XAKEPEHOK)
  */
 
-namespace Leadvertex\Plugin\Instance\Pbx;
+namespace SalesRender\Plugin\Instance\Pbx;
 
-use Leadvertex\Plugin\Components\Settings\Settings;
-use Leadvertex\Plugin\Core\PBX\Components\Config\Config;
+use SalesRender\Plugin\Components\Settings\Settings;
+use SalesRender\Plugin\Core\PBX\Components\Config\Config;
 
-class ConfigBuilder implements \Leadvertex\Plugin\Core\PBX\Components\Config\ConfigBuilder
+class ConfigBuilder implements \SalesRender\Plugin\Core\PBX\Components\Config\ConfigBuilder
 {
 
     private Settings $settings;

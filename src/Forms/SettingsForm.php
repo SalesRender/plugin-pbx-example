@@ -5,21 +5,21 @@
  * @author Timur Kasumov aka XAKEPEHOK
  */
 
-namespace Leadvertex\Plugin\Instance\Pbx\Forms;
+namespace SalesRender\Plugin\Instance\Pbx\Forms;
 
 
-use Leadvertex\Plugin\Components\Form\FieldDefinitions\BooleanDefinition;
-use Leadvertex\Plugin\Components\Form\FieldDefinitions\FieldDefinition;
-use Leadvertex\Plugin\Components\Form\FieldDefinitions\IntegerDefinition;
-use Leadvertex\Plugin\Components\Form\FieldDefinitions\ListOfEnum\Limit;
-use Leadvertex\Plugin\Components\Form\FieldDefinitions\ListOfEnum\Values\StaticValues;
-use Leadvertex\Plugin\Components\Form\FieldDefinitions\ListOfEnumDefinition;
-use Leadvertex\Plugin\Components\Form\FieldDefinitions\PasswordDefinition;
-use Leadvertex\Plugin\Components\Form\FieldDefinitions\StringDefinition;
-use Leadvertex\Plugin\Components\Form\FieldGroup;
-use Leadvertex\Plugin\Components\Form\Form;
-use Leadvertex\Plugin\Components\Form\FormData;
-use Leadvertex\Plugin\Components\Translations\Translator;
+use SalesRender\Plugin\Components\Form\FieldDefinitions\BooleanDefinition;
+use SalesRender\Plugin\Components\Form\FieldDefinitions\FieldDefinition;
+use SalesRender\Plugin\Components\Form\FieldDefinitions\IntegerDefinition;
+use SalesRender\Plugin\Components\Form\FieldDefinitions\ListOfEnum\Limit;
+use SalesRender\Plugin\Components\Form\FieldDefinitions\ListOfEnum\Values\StaticValues;
+use SalesRender\Plugin\Components\Form\FieldDefinitions\ListOfEnumDefinition;
+use SalesRender\Plugin\Components\Form\FieldDefinitions\PasswordDefinition;
+use SalesRender\Plugin\Components\Form\FieldDefinitions\StringDefinition;
+use SalesRender\Plugin\Components\Form\FieldGroup;
+use SalesRender\Plugin\Components\Form\Form;
+use SalesRender\Plugin\Components\Form\FormData;
+use SalesRender\Plugin\Components\Translations\Translator;
 
 class SettingsForm extends Form
 {

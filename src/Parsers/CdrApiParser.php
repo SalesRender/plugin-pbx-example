@@ -5,12 +5,12 @@
  * @author Timur Kasumov (XAKEPEHOK)
  */
 
-namespace Leadvertex\Plugin\Instance\Pbx\Parsers;
+namespace SalesRender\Plugin\Instance\Pbx\Parsers;
 
-use Leadvertex\Plugin\Components\Db\Helpers\UuidHelper;
-use Leadvertex\Plugin\Core\PBX\Components\CDR\CDR;
-use Leadvertex\Plugin\Core\PBX\Components\CDR\CdrApiParserInterface as CdrApiParserInterfaceAlias;
-use Leadvertex\Plugin\Core\PBX\Components\CDR\CdrPricing;
+use SalesRender\Plugin\Components\Db\Helpers\UuidHelper;
+use SalesRender\Plugin\Core\PBX\Components\CDR\CDR;
+use SalesRender\Plugin\Core\PBX\Components\CDR\CdrApiParserInterface as CdrApiParserInterfaceAlias;
+use SalesRender\Plugin\Core\PBX\Components\CDR\CdrPricing;
 use Money\Currency;
 use Money\Money;
 
