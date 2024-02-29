@@ -34,6 +34,7 @@ class ConfigBuilder implements \SalesRender\Plugin\Core\PBX\Components\Config\Co
         $config->register = $this->settings->getData()->get('advanced.register');
         $config->number_format_with_plus = $this->settings->getData()->get('advanced.number_format_with_plus');
         $config->send_additional_data_via_x_headers = $this->settings->getData()->get('advanced.send_additional_data_via_x_headers');
+        $config->header_for_DID = $this->settings->getData()->get('advanced.header_for_DID');
         return $config;
     }
 }

@@ -49,7 +49,7 @@ X-PLUGIN-TOKEN: {{token}}
       "static_13",
       "static_14"
     ],
-    "file_field": "https://leadvertex.ru/img/logo.png",
+    "file_field": "https://salesrender.ru/img/logo.png",
     "markdown_field": "Text with `markdown`",
     "string_field": "New string",
     "password_field": "VeRy_StrOnG_Pass_123",
@@ -93,7 +93,7 @@ X-PLUGIN-TOKEN: {{token}}
       "static_13",
       "static_14"
     ],
-    "file_field": "https://leadvertex.ru/img/logo.png",
+    "file_field": "https://salesrender.com/_assets/logo.svg",
     "markdown_field": "Text with `markdown`",
     "string_field": "New string",
     "password_field": "VeRy_StrOnG_Pass_123",

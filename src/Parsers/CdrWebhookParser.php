@@ -7,11 +7,18 @@
 
 namespace SalesRender\Plugin\Instance\Pbx\Parsers;
 
+
+use Exception;
+use SalesRender\Plugin\Components\Access\Registration\Registration;
+use SalesRender\Plugin\Components\Access\Token\GraphqlInputToken;
+use SalesRender\Plugin\Components\Db\Components\Connector;
 use SalesRender\Plugin\Core\PBX\Components\CDR\CDR;
 use SalesRender\Plugin\Core\PBX\Components\CDR\CdrPricing;
+use SalesRender\Plugin\Core\PBX\Components\CDR\CdrSender;
 use SalesRender\Plugin\Core\PBX\Components\CDR\CdrWebhookParserInterface;
 use Money\Currency;
 use Money\Money;
+use Slim\Exception\HttpException;
 use Slim\Http\Response;
 use Slim\Http\ServerRequest;
 
@@ -25,18 +32,17 @@ class CdrWebhookParser implements CdrWebhookParserInterface
 
     public function getPattern(): string
     {
-        return 'protected/cdr-webhook';
+        return '/protected/cdr-webhook';
     }
 
     /**
      * @param ServerRequest $request
      * @param Response $response
      * @param array $args
-     * @return Response
+     * @return CDR[]
      */
     public function __invoke(ServerRequest $request, Response $response, array $args): Response
     {
-        $cdrCount = rand(1, 10);
         $result = [];
         foreach ($request->getParsedBody() as $uuid => $data) {
             $cdr = new CDR($data['phone']);
@@ -50,6 +56,26 @@ class CdrWebhookParser implements CdrWebhookParserInterface
             ));
             $result[] = $cdr;
         }
+
+        $jwt = $request->getHeader('X-PLUGIN-TOKEN')[0] ?? '';
+
+        if (empty($jwt)) {
+            throw new HttpException($request, 'X-PLUGIN-TOKEN not found', 401);
+        }
+
+        try {
+            $token = new GraphqlInputToken($jwt);
+        } catch (Exception $exception) {
+            throw new HttpException($request, $exception->getMessage(), 403);
+        }
+
+        Connector::setReference($token->getPluginReference());
+        if (Registration::find() === null) {
+            throw new HttpException($request, 'Plugin was not registered', 403);
+        }
+
+        $cdrSender = new CdrSender(...$result);
+        $cdrSender();
         return $response->withJson($result);
     }
 }

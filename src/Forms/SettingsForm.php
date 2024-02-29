@@ -121,6 +121,14 @@ class SettingsForm extends Form
                             $nonNull,
                             true
                         ),
+                        'header_for_DID' => new StringDefinition(
+                            Translator::get('settings', 'В каком заголовке провайдер передает DID (А-номер)?'),
+                            null,
+                            function () {
+                                return [];
+                            },
+                            '',
+                        ),
                     ]
                 ),
             ],
