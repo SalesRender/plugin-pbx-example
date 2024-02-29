@@ -5,11 +5,11 @@
  * @author Timur Kasumov (XAKEPEHOK)
  */
 
-namespace Leadvertex\Plugin\Instance\Pbx\Parsers;
+namespace SalesRender\Plugin\Instance\Pbx\Parsers;
 
-use Leadvertex\Plugin\Core\PBX\Components\CDR\CDR;
-use Leadvertex\Plugin\Core\PBX\Components\CDR\CdrPricing;
-use Leadvertex\Plugin\Core\PBX\Components\CDR\CdrWebhookParserInterface;
+use SalesRender\Plugin\Core\PBX\Components\CDR\CDR;
+use SalesRender\Plugin\Core\PBX\Components\CDR\CdrPricing;
+use SalesRender\Plugin\Core\PBX\Components\CDR\CdrWebhookParserInterface;
 use Money\Currency;
 use Money\Money;
 use Slim\Http\Response;
@@ -32,9 +32,9 @@ class CdrWebhookParser implements CdrWebhookParserInterface
      * @param ServerRequest $request
      * @param Response $response
      * @param array $args
-     * @return CDR[]
+     * @return Response
      */
-    public function __invoke(ServerRequest $request, Response $response, array $args): array
+    public function __invoke(ServerRequest $request, Response $response, array $args): Response
     {
         $cdrCount = rand(1, 10);
         $result = [];
@@ -50,6 +50,6 @@ class CdrWebhookParser implements CdrWebhookParserInterface
             ));
             $result[] = $cdr;
         }
-        return $result;
+        return $response->withJson($result);
     }
 }

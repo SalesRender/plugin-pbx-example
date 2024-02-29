@@ -6,20 +6,20 @@
  */
 
 use Dotenv\Dotenv;
-use Leadvertex\Plugin\Components\Db\Components\Connector;
-use Leadvertex\Plugin\Components\Form\Autocomplete\AutocompleteRegistry;
-use Leadvertex\Plugin\Components\Info\Developer;
-use Leadvertex\Plugin\Components\Info\Info;
-use Leadvertex\Plugin\Components\Info\PluginType;
-use Leadvertex\Plugin\Components\Settings\Settings;
-use Leadvertex\Plugin\Components\Translations\Translator;
-use Leadvertex\Plugin\Core\PBX\Components\CDR\CdrParserContainer;
-use Leadvertex\Plugin\Core\PBX\Components\CDR\CdrPricing;
-use Leadvertex\Plugin\Core\PBX\Components\Config\ConfigSender;
-use Leadvertex\Plugin\Instance\Pbx\ConfigBuilder;
-use Leadvertex\Plugin\Instance\Pbx\Forms\SettingsForm;
-use Leadvertex\Plugin\Instance\Pbx\Parsers\CdrApiParser;
-use Leadvertex\Plugin\Instance\Pbx\Parsers\CdrWebhookParser;
+use SalesRender\Plugin\Components\Db\Components\Connector;
+use SalesRender\Plugin\Components\Form\Autocomplete\AutocompleteRegistry;
+use SalesRender\Plugin\Components\Info\Developer;
+use SalesRender\Plugin\Components\Info\Info;
+use SalesRender\Plugin\Components\Info\PluginType;
+use SalesRender\Plugin\Components\Settings\Settings;
+use SalesRender\Plugin\Components\Translations\Translator;
+use SalesRender\Plugin\Core\PBX\Components\CDR\CdrParserContainer;
+use SalesRender\Plugin\Core\PBX\Components\CDR\CdrPricing;
+use SalesRender\Plugin\Core\PBX\Components\Config\ConfigSender;
+use SalesRender\Plugin\Instance\Pbx\ConfigBuilder;
+use SalesRender\Plugin\Instance\Pbx\Forms\SettingsForm;
+use SalesRender\Plugin\Instance\Pbx\Parsers\CdrApiParser;
+use SalesRender\Plugin\Instance\Pbx\Parsers\CdrWebhookParser;
 use Medoo\Medoo;
 use Money\Money;
 use XAKEPEHOK\Path\Path;
@@ -47,7 +47,8 @@ Info::config(
         'pricing' => [
             'pbx' => $_ENV['LV_PLUGIN_PBX_PRICING_PBX'],
             'record' => $_ENV['LV_PLUGIN_PBX_PRICING_RECORD'],
-        ]
+        ],
+        'codename' => 'SR_PBX_EXAMPLE'
     ],
     new Developer(
         'Your (company) name',

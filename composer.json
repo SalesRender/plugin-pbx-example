@@ -1,28 +1,25 @@
 {
-  "name": "leadvertex/plugin-pbx-example",
-  "description": "Example PBX plugin for developing UI at leadvertex.com",
+  "name": "salesrender/plugin-pbx-example",
+  "description": "Example PBX plugin for developing UI at salesrender.com",
   "type": "project",
   "minimum-stability": "stable",
   "license": "proprietary",
   "authors": [
     {
       "name": "Timur Kasumov aka XAKEPEHOK",
-      "email": "support@leadvertex.com"
+      "email": "support@salesrender.com"
     }
   ],
   "autoload": {
     "psr-4": {
-      "Leadvertex\\Plugin\\Instance\\Pbx\\": "src/"
+      "SalesRender\\Plugin\\Instance\\Pbx\\": "src/"
     }
   },
-  "repositories": [
-    { "type": "composer", "url": "https://packagist.lvrtx.com/" }
-  ],
   "require": {
-    "php": ">=7.4.0",
+    "php": "^7.4.0",
     "ext-curl": "*",
     "ext-json": "*",
     "xakepehok/array-graphql": "^0.0.1",
-    "leadvertex/plugin-core-pbx": "^0.2.0"
+    "salesrender/plugin-core-pbx": "^0.4.0"
   }
 }
