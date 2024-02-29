@@ -39,7 +39,7 @@ class CdrWebhookParser implements CdrWebhookParserInterface
      * @param ServerRequest $request
      * @param Response $response
      * @param array $args
-     * @return CDR[]
+     * @return Response
      */
     public function __invoke(ServerRequest $request, Response $response, array $args): Response
     {
