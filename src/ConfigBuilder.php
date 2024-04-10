@@ -26,6 +26,7 @@ class ConfigBuilder implements \SalesRender\Plugin\Core\PBX\Components\Config\Co
         $config->username = $this->settings->getData()->get('main.login');
         $config->password = $this->settings->getData()->get('main.password');
         $config->from = $this->settings->getData()->get('main.from');
+        $config->prefix = $this->settings->getData()->get('main.prefix');
         $config->protocol = $this->settings->getData()->get('advanced.protocol.0');
         $config->domain = $this->settings->getData()->get('advanced.domain');
         $config->realm = $this->settings->getData()->get('advanced.realm');

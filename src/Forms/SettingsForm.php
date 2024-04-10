@@ -59,6 +59,14 @@ class SettingsForm extends Form
                             },
                             ''
                         ),
+                        'prefix' => new StringDefinition(
+                            Translator::get('settings', 'Префикс'),
+                            null,
+                            function () {
+                                return [];
+                            },
+                            ''
+                        ),
                     ]
                 ),
                 'advanced' => new FieldGroup(
