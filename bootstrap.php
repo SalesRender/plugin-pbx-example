@@ -43,9 +43,11 @@ Info::config(
     fn() => Translator::get('info', 'Plugin name'),
     fn() => Translator::get('info', 'Plugin markdown description'),
     [
+        'class' => "SIP",
+        "entity" => "UNSPECIFIED",
         'currency' => $_ENV['LV_PLUGIN_PBX_PRICING_CURRENCY'],
         'pricing' => [
-            'pbx' => $_ENV['LV_PLUGIN_PBX_PRICING_PBX'],
+            'encryption' => $_ENV['LV_PLUGIN_PBX_PRICING_PBX'],
             'record' => $_ENV['LV_PLUGIN_PBX_PRICING_RECORD'],
         ],
         'codename' => 'SR_PBX_EXAMPLE'
